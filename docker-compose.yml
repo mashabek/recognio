@@ -1,7 +1,0 @@
-﻿services:
-  recognitionapi:
-    image: recognitionapi
-    build:
-      context: .
-      dockerfile: RecognitionApi/Dockerfile
-  

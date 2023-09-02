@@ -1,0 +1,19 @@
+﻿services:
+  recognitionapi:
+    image: recognitionapi
+    build:
+      context: .
+      dockerfile: RecognitionApi/Dockerfile
+  db:
+    image: postgres:latest
+    container_name: "psql"
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: RecognitionsDb
+      POSTGRES_USER: User
+      POSTGRES_PASSWORD: User123
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  
